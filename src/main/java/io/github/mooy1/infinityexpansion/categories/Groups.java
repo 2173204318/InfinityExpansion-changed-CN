@@ -24,7 +24,7 @@ public static final ItemGroup BASIC_MACHINES = new SubGroup("basic_machines",
 public static final ItemGroup ADVANCED_MACHINES = new SubGroup("advanced_machines",
         new CustomItemStack(Material.BLAST_FURNACE, "&e天空无尽 &7- &6高级机器"));
 public static final ItemGroup STORAGE = new SubGroup("storage",
-        new CustomItemStack(Material.BEEHIVE, "&e天空无尽 &7- &6存储"));
+        new CustomItemStack(Material.BARRIER, "&e天空无尽 &7- &6此模块已禁用"));
 public static final ItemGroup MOB_SIMULATION = new SubGroup("mob_simulation",
         new CustomItemStack(Material.BEACON, "&e天空无尽 &7- &6生物模拟"));
 public static final ItemGroup INFINITY_MATERIALS = new SubGroup("infinity_materials",
