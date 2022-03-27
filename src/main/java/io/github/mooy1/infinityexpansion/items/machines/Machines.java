@@ -258,7 +258,7 @@ public final class Machines {
             "&7从虚无中缓慢收集&8虚空粒",
             "",
             MachineLore.speed(1),
-            MachineLore.energyPerSecond(1200)
+            MachineLore.energyPerSecond(300)
     );
 	public static final SlimefunItemStack LUMINA_HARVESTER = new SlimefunItemStack(
             "LUMINA_HARVESTER",
@@ -276,7 +276,7 @@ public final class Machines {
             "&7从虚无中缓慢收集&8虚空粒",
             "",
             MachineLore.speed(64),
-            MachineLore.energyPerSecond(28888)
+            MachineLore.energyPerSecond(18800)
     );
 
     public static void setup(InfinityExpansion plugin) {
