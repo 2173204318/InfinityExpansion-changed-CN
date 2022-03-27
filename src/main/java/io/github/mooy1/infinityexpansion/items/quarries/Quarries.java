@@ -33,7 +33,7 @@ public final class Quarries {
             "&7自动挖主世界矿物",
             "",
             MachineLore.speed(1),
-            MachineLore.energyPerSecond(300)
+            MachineLore.energyPerSecond(600)
     );
     public static final SlimefunItemStack ADVANCED_QUARRY = new SlimefunItemStack(
             "ADVANCED_QUARRY",
@@ -41,8 +41,8 @@ public final class Quarries {
             "&c高级矿机",
             "&7自动挖主世界和下界矿物",
             "",
-            MachineLore.speed(3),
-            MachineLore.energyPerSecond(900)
+            MachineLore.speed(2),
+            MachineLore.energyPerSecond(1800)
     );
     public static final SlimefunItemStack VOID_QUARRY = new SlimefunItemStack(
             "VOID_QUARRY",
@@ -50,8 +50,8 @@ public final class Quarries {
             "&8虚空矿机",
             "&7自动挖主世界和下界矿物",
             "",
-            MachineLore.speed(9),
-            MachineLore.energyPerSecond(3600)
+            MachineLore.speed(6),
+            MachineLore.energyPerSecond(7200)
     );
     public static final SlimefunItemStack INFINITY_QUARRY = new SlimefunItemStack(
             "INFINITY_QUARRY",
@@ -60,7 +60,7 @@ public final class Quarries {
             "&7自动挖主世界和下界矿物",
             "",
             MachineLore.speed(64),
-            MachineLore.energyPerSecond(36000)
+            MachineLore.energyPerSecond(72000)
     );
     public static final SlimefunItemStack DIAMOND_OSCILLATOR = Oscillator.create(Material.DIAMOND);
     public static final SlimefunItemStack REDSTONE_OSCILLATOR = Oscillator.create(Material.REDSTONE);
@@ -78,17 +78,32 @@ public final class Quarries {
         if (coal) {
             outputs.add(Material.COAL);
             outputs.add(Material.COAL);
+            outputs.add(Material.COAL);
+            outputs.add(Material.COAL);
+            outputs.add(Material.COAL);
+            outputs.add(Material.COAL);
+            outputs.add(Material.COAL);
+            outputs.add(Material.COAL);
+            outputs.add(Material.COAL);
+            outputs.add(Material.COAL);
         }
 
         if (section.getBoolean("iron")) {
+            outputs.add(Material.IRON_INGOT);
+            outputs.add(Material.IRON_INGOT);
+            outputs.add(Material.IRON_INGOT);
             outputs.add(Material.IRON_INGOT);
         }
 
         if (section.getBoolean("gold")) {
             outputs.add(Material.GOLD_INGOT);
+            outputs.add(Material.GOLD_INGOT);
+            outputs.add(Material.GOLD_INGOT);
+            outputs.add(Material.GOLD_INGOT);
         }
 
         if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_17) && section.getBoolean("copper")) {
+            outputs.add(Material.COPPER_INGOT);
             outputs.add(Material.COPPER_INGOT);
             outputs.add(Material.COPPER_INGOT);
         }
@@ -97,17 +112,21 @@ public final class Quarries {
             new Oscillator(REDSTONE_OSCILLATOR).register(plugin);
 
             outputs.add(Material.REDSTONE);
+            outputs.add(Material.REDSTONE);
         }
 
         if (section.getBoolean("lapis")) {
             new Oscillator(LAPIS_OSCILLATOR).register(plugin);
 
             outputs.add(Material.LAPIS_LAZULI);
+            outputs.add(Material.LAPIS_LAZULI);
         }
 
         if (section.getBoolean("emerald")) {
             new Oscillator(EMERALD_OSCILLATOR).register(plugin);
 
+            outputs.add(Material.EMERALD);
+            outputs.add(Material.EMERALD);
             outputs.add(Material.EMERALD);
         }
 
@@ -119,44 +138,52 @@ public final class Quarries {
 
         new Quarry(Groups.ADVANCED_MACHINES, BASIC_QUARRY, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 Materials.MAGSTEEL_PLATE, SlimefunItems.CARBONADO_EDGED_CAPACITOR, Materials.MAGSTEEL_PLATE,
-                new ItemStack(Material.IRON_PICKAXE), SlimefunItems.GEO_MINER, new ItemStack(Material.IRON_PICKAXE),
+                new ItemStack(Material.IRON_BLOCK), SlimefunItems.GEO_MINER, new ItemStack(Material.IRON_BLOCK),
                 Materials.MACHINE_CIRCUIT, Materials.MACHINE_CORE, Materials.MACHINE_CIRCUIT
-        }, 1, 6, outputs.toArray(new Material[0])).energyPerTick(300).register(plugin);
+        }, 1, 6, outputs.toArray(new Material[0])).energyPerTick(600).register(plugin);
 
         if (section.getBoolean("quartz")) {
             new Oscillator(QUARTZ_OSCILLATOR).register(plugin);
 
             outputs.add(Material.QUARTZ);
-        }
-
-        if (section.getBoolean("netherite")) {
-            outputs.add(Material.NETHERITE_INGOT);
+            outputs.add(Material.QUARTZ);
+            outputs.add(Material.QUARTZ);
         }
 
         if (section.getBoolean("netherrack")) {
+            outputs.add(Material.NETHERRACK);
+            outputs.add(Material.NETHERRACK);
             outputs.add(Material.NETHERRACK);
             outputs.add(Material.NETHERRACK);
         }
 
         new Quarry(Groups.ADVANCED_MACHINES, ADVANCED_QUARRY, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 Materials.MACHINE_PLATE, SlimefunItems.ENERGIZED_CAPACITOR, Materials.MACHINE_PLATE,
-                new ItemStack(Material.DIAMOND_PICKAXE), BASIC_QUARRY, new ItemStack(Material.DIAMOND_PICKAXE),
+                new ItemStack(Material.DIAMOND_BLOCK), BASIC_QUARRY, new ItemStack(Material.GOLD_BLOCK),
                 Materials.MACHINE_CIRCUIT, Materials.MACHINE_CORE, Materials.MACHINE_CIRCUIT
-        }, 3, 4, outputs.toArray(new Material[0])).energyPerTick(900).register(plugin);
+        }, 2, 4, outputs.toArray(new Material[0])).energyPerTick(1800).register(plugin);
 
         if (coal) {
+            outputs.add(Material.COAL);
             outputs.add(Material.COAL);
         }
 
         new Quarry(Groups.ADVANCED_MACHINES, VOID_QUARRY, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 Materials.VOID_INGOT, SlimefunExtension.VOID_CAPACITOR, Materials.VOID_INGOT,
-                new ItemStack(Material.NETHERITE_PICKAXE), ADVANCED_QUARRY, new ItemStack(Material.NETHERITE_PICKAXE),
+                new ItemStack(Material.NETHERITE_BLOCK), ADVANCED_QUARRY, new ItemStack(Material.DIAMOND_BLOCK),
                 Materials.MACHINE_CIRCUIT, Materials.MACHINE_CORE, Materials.MACHINE_CIRCUIT
-        }, 9, 2, outputs.toArray(new Material[0])).energyPerTick(3600).register(plugin);
+        }, 4, 2, outputs.toArray(new Material[0])).energyPerTick(7200).register(plugin);
 
         if (coal) {
             outputs.add(Material.COAL);
+            outputs.add(Material.COAL);
         }
+
+        if (section.getBoolean("netherite_scrap")) {
+            outputs.add(Material.NETHERITE_SCRAP);
+            outputs.add(Material.NETHERITE_SCRAP);
+        }
+
 
         new Quarry(Groups.INFINITY_CHEAT, INFINITY_QUARRY, InfinityWorkbench.TYPE, new ItemStack[] {
                 null, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, Materials.MACHINE_PLATE, null,
@@ -165,7 +192,7 @@ public final class Quarries {
                 Materials.VOID_INGOT, null, Materials.INFINITE_INGOT, Materials.INFINITE_INGOT, null, Materials.VOID_INGOT,
                 Materials.VOID_INGOT, null, Materials.INFINITE_INGOT, Materials.INFINITE_INGOT, null, Materials.VOID_INGOT,
                 Materials.VOID_INGOT, null, Materials.INFINITE_INGOT, Materials.INFINITE_INGOT, null, Materials.VOID_INGOT
-        }, 64, 1, outputs.toArray(new Material[0])).energyPerTick(36000).register(plugin);
+        }, 10, 1, outputs.toArray(new Material[0])).energyPerTick(72000).register(plugin);
     }
 
 }
