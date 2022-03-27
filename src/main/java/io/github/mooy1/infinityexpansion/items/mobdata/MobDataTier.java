@@ -5,22 +5,22 @@ import org.bukkit.Material;
 public enum MobDataTier {
 
     // ex: chicken
-    PASSIVE(1, 75, Material.IRON_CHESTPLATE),
+    PASSIVE(1, 300, Material.IRON_CHESTPLATE),
 
     // ex: slime
-    NEUTRAL(1, 150, Material.IRON_CHESTPLATE),
+    NEUTRAL(1, 600, Material.IRON_CHESTPLATE),
 
     // ex: zombie
-    HOSTILE(2, 300, Material.DIAMOND_CHESTPLATE),
+    HOSTILE(2, 1200, Material.DIAMOND_CHESTPLATE),
 
     // ex: endermen
-    ADVANCED(4, 600, Material.DIAMOND_CHESTPLATE),
+    ADVANCED(4, 2400, Material.DIAMOND_CHESTPLATE),
 
     // ex: wither
-    MINI_BOSS(32, 4500, Material.NETHERITE_CHESTPLATE),
+    MINI_BOSS(32, 18000, Material.NETHERITE_CHESTPLATE),
 
     // ex: ender dragon
-    BOSS(96, 9000, Material.NETHERITE_CHESTPLATE);
+    BOSS(96, 36000, Material.NETHERITE_CHESTPLATE);
 
     final int xp;
     final int energy;
