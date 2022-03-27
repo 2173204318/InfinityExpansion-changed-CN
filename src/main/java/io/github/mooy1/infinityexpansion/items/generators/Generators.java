@@ -19,15 +19,15 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 public final class Generators {
 
     private static final int HYDRO_ENERGY = 5;
-    private static final int ADVANCED_HYDRO_ENERGY = 45;
-    private static final int GEO_ENERGY = 35;
-    private static final int ADVANCED_GEO_ENERGY = 210;
+    private static final int ADVANCED_HYDRO_ENERGY = 40;
+    private static final int GEO_ENERGY = 30;
+    private static final int ADVANCED_GEO_ENERGY = 160;
     private static final int BASIC_SOLAR_ENERGY = 9;
-    private static final int ADVANCED_SOLAR_ENERGY = 150;
-    private static final int CELESTIAL_ENERGY = 750;
-    private static final int VOID_ENERGY = 3000;
-    private static final int INFINITY_ENERGY = 60_000;
-    private static final int INFINITY_REACTOR_ENERGY = 120_000;
+    private static final int ADVANCED_SOLAR_ENERGY = 75;
+    private static final int CELESTIAL_ENERGY = 325;
+    private static final int VOID_ENERGY = 1500;
+    private static final int INFINITY_ENERGY = 30_000;
+    private static final int INFINITY_REACTOR_ENERGY = 60_000;
 
     public static final SlimefunItemStack INFINITY_REACTOR = new SlimefunItemStack(
             "INFINITY_REACTOR",
