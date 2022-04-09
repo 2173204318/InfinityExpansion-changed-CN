@@ -20,7 +20,13 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn package --file pom.xml
+      run: mvn package --file pom.xml --errors
+    - run: mkdir staging && cp target/InfinityExpansion-*.jar staging
+    - uses: actions/cache@v2
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
     - uses: actions/upload-artifact@v2
       with:
         name: InfinityExpansion.jar
@@ -33,4 +39,4 @@ jobs:
         prerelease: true
         title: "Automatic Releases"
         files: |
-          target/*.jar
+          target/InfinityExpansion-*.jar
